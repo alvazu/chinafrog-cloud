@@ -80,7 +80,7 @@
         window.pointSimplifierIns = pointSimplifierIns;
 
         $('<div id="loadingTip">加载数据，请稍候...</div>').appendTo(document.body);
-        $.get('https://cloud.chinafrog.com/alvazu/10w.txt', function(csv) {
+        $.get('https://cloud.chinafrog.com/alvazu/data.txt', function(csv) {
 
             var data = csv.split('\n');
 
