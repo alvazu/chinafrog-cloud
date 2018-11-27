@@ -2,11 +2,11 @@
 <html lang="zh-CN">
 
 <head>
-    <!-- Ô­Ê¼µØÖ·£º//webapi.amap.com/ui/1.0/ui/misc/PointSimplifier/examples/index.html -->
-    <base href="//webapi.amap.com/ui/1.0/ui/misc/PointSimplifier/examples/" />
+    <!-- åŸå§‹åœ°å€ï¼š//webapi.amap.com/ui/1.0/ui/misc/PointSimplifier/examples/index.html -->
+    <base href="https://webapi.amap.com/ui/1.0/ui/misc/PointSimplifier/examples/" />
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
-    <title>º£Á¿µãÕ¹Ê¾</title>
+    <title>æµ·é‡ç‚¹å±•ç¤º</title>
     <style>
     html,
     body,
@@ -31,11 +31,11 @@
 
 <body>
     <div id="container"></div>
-    <script type="text/javascript" src='http://webapi.amap.com/maps?v=1.4.10&key=1724b34d4dd2ada44229e9f93caa7cc5'></script>
-    <!-- UI×é¼ş¿â 1.0 -->
-    <script src="http://webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+    <script type="text/javascript" src='https://webapi.amap.com/maps?v=1.4.10&key=1724b34d4dd2ada44229e9f93caa7cc5'></script>
+    <!-- UIç»„ä»¶åº“ 1.0 -->
+    <script src="https://webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
     <script type="text/javascript">
-    //´´½¨µØÍ¼
+    //åˆ›å»ºåœ°å›¾
     var map = new AMap.Map('container', {
         zoom: 4
     });
@@ -43,12 +43,12 @@
     AMapUI.load(['ui/misc/PointSimplifier', 'lib/$'], function(PointSimplifier, $) {
 
         if (!PointSimplifier.supportCanvas) {
-            alert('µ±Ç°»·¾³²»Ö§³Ö Canvas£¡');
+            alert('å½“å‰ç¯å¢ƒä¸æ”¯æŒ Canvasï¼');
             return;
         }
 
         var pointSimplifierIns = new PointSimplifier({
-            map: map, //ËùÊôµÄµØÍ¼ÊµÀı
+            map: map, //æ‰€å±çš„åœ°å›¾å®ä¾‹
 
             getPosition: function(item) {
 
@@ -58,19 +58,19 @@
 
                 var parts = item.split(',');
 
-                //·µ»Ø¾­Î³¶È
+                //è¿”å›ç»çº¬åº¦
                 return [parseFloat(parts[0]), parseFloat(parts[1])];
             },
             getHoverTitle: function(dataItem, idx) {
                 return idx + ': ' + dataItem;
             },
             renderOptions: {
-                //µãµÄÑùÊ½
+                //ç‚¹çš„æ ·å¼
                 pointStyle: {
                     width: 6,
                     height: 6
                 },
-                //Êó±êhoverÊ±µÄtitleĞÅÏ¢
+                //é¼ æ ‡hoveræ—¶çš„titleä¿¡æ¯
                 hoverTitleStyle: {
                     position: 'top'
                 }
@@ -79,7 +79,7 @@
 
         window.pointSimplifierIns = pointSimplifierIns;
 
-        $('<div id="loadingTip">¼ÓÔØÊı¾İ£¬ÇëÉÔºò...</div>').appendTo(document.body);
+        $('<div id="loadingTip">åŠ è½½æ•°æ®ï¼Œè¯·ç¨å€™...</div>').appendTo(document.body);
         $.get('10w.txt', function(csv) {
 
             var data = csv.split('\n');
